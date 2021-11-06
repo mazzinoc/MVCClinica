@@ -1,0 +1,39 @@
+﻿@model MVCClinica.Data.Medico
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h2>Medico Delete</h2>
+    <p>Are you sure?</p>
+
+    @using (Html.BeginForm("Delete", "Medico", FormMethod.Post))
+    {
+        <fieldset>
+            <legend>Medico Details</legend>
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Nombre)
+            </div>
+            <div class="display-text">
+                @Html.DisplayFor(model => model.Nombre)
+            </div>
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Apellido)
+            </div>
+            <div class="display-text">
+                @Html.DisplayFor(model => model.Apellido)
+            </div>
+
+        </fieldset>
+        <p>
+            <input type="submit" name="Enviar" value="Delete" />
+        </p>
+    }
+    @Html.ActionLink("back to list", "Index", "Medico")
+
+</body>
+</html>
